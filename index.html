@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CAMCULATORZ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-bits"></div>
+  <div class="container">
+    <h1 class="glow-text">CAMCULATORZ</h1>
+    <p class="subtitle">Gesture-Based Math Solver</p>
+
+    <!-- Neon Camera Box -->
+    <div class="camera-box">
+      <video id="webcam" autoplay playsinline></video>
+      
+  <video id="webcam" autoplay playsinline></video>
+  <div class="crosshair-box"></div> <!-- New green overlay -->
+</div>
+<p style="color: lime; font-family: monospace; text-align: center;">
+  🟢 Place your hand inside the green box to detect gestures
+</p>
+
+    </div>
+  </div>
+
+  <!-- Result Display Box -->
+  <div class="result-box">
+    <p id="result-text">Detected Input Will Appear Here</p>
+  </div>
+</div>
+<button onclick="resetCalculator()" class="reset-btn">Reset Calculator</button>
+
+<!-- TensorFlow & MediaPipe Hands -->
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+
+<!-- Your JS file -->
+
+  <script src="app.js"></script>
+</body>
+</html>

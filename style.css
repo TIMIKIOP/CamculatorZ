@@ -1,0 +1,194 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000; /* Pure black */
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+/* Digital Glow Title */
+.glow-text {
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: #0ff;
+  animation: glow 2s ease-in-out infinite alternate, popIn 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+/* Subtitle with fade effect */
+.subtitle {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #ccc;
+  animation: fadeIn 2s ease-in forwards;
+  animation-delay: 1.2s;
+  opacity: 0;
+}
+
+/* Pop-up effect for title */
+@keyframes popIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Glow effect */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+  }
+  to {
+    text-shadow: 0 0 20px #0ff, 0 0 40px #0ff, 0 0 60px #0ff;
+  }
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Background bits (digital dots) */
+.bg-bits::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#0ff 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.05;
+  animation: bitsMove 20s linear infinite;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+/* Floating animation for digital dots */
+@keyframes bitsMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1000px 1000px;
+  }
+}
+
+/* Orbitron font (optional import from Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+.camera-box {
+  margin-top: 2rem;
+  width: 480px;
+  height: 360px;
+  border: 4px solid #00f0ff;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff, 0 0 60px #00f0ff;
+  padding: 8px;
+  position: relative;
+  overflow: hidden;
+  animation: neonPulse 2s infinite alternate;
+}
+
+/* Video inside camera box */
+#webcam {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Pulsing glow animation */
+@keyframes neonPulse {
+  from {
+    box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+  }
+  to {
+    box-shadow: 0 0 30px #00f0ff, 0 0 60px #00f0ff;
+  }
+}
+.result-box {
+  margin-top: 1.5rem;
+  width: 480px;
+  padding: 1rem;
+  border: 4px solid #ff004c;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #ff004c, 0 0 30px #ff004c, 0 0 45px #ff004c;
+  background-color: rgba(0, 0, 0, 0.6);
+  animation: redPulse 2s infinite alternate;
+}
+
+/* Text inside result box */
+#result-text {
+  font-size: 1.2rem;
+  color: #fff;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Red pulse animation */
+@keyframes redPulse {
+  from {
+    box-shadow: 0 0 10px #ff004c, 0 0 20px #ff004c;
+  }
+  to {
+    box-shadow: 0 0 30px #ff004c, 0 0 60px #ff004c;
+  }
+}
+.reset-btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #0ff;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.reset-btn:hover {
+  background: #00cccc;
+}
+.crosshair-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  border: 2px solid lime;
+  box-shadow: 0 0 20px lime, 0 0 40px lime;
+  pointer-events: none;
+  z-index: 2;
+  border-radius: 8px;
+}
+.camera-box {
+  position: relative;
+  width: 480px;
+  height: 360px;
+  border: 4px solid #0ff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+  animation: pulse 2s infinite alternate;
+}
